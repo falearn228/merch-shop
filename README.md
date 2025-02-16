@@ -3,14 +3,14 @@ A store created for the purchase of merch by users and the ability to transfer c
 
 ## Основные моменты
 
-Используемые технологии -> Docker, Docker-compose, Grafana, PostgreSQL, Golang (SQLC, gomock, testify, Gin, Viper)
+Используемые технологии -> Docker, Docker-compose, Grafana, PostgreSQL, Golang (SQLC, gomock, testify, Gin, Viper) \
 
-`migrations` - файл с миграциями для БД
-`internal` - внутренний код проекта 
-* `internal/tests` - E2E тесты для покупки мерча и передачи монет сотрудникам.
-`cmd/server` - основной файл сервиса
+`migrations` - файл с миграциями для БД \
+`internal` - внутренний код проекта \
+* `internal/tests` - E2E тесты для покупки мерча и передачи монет сотрудникам. \
+`cmd/server` - основной файл сервиса \
 
-Реализованы юнит-тесты для SQLC кода, API бизнес логики.
+Реализованы юнит-тесты для SQLC кода, API бизнес логики. \
 
 ## Требования
 - Docker
@@ -24,8 +24,8 @@ git clone https://github.com/falearn228/merch-shop.git
 cd merch-shop/avito-shop
 ```
 
-В **Makefile** описаны все возможные команды.
-в **app.config.env** установлены переменные окружения для подключения к БД и настройки токена.
+В **Makefile** описаны все возможные команды. \
+в **app.config.env** установлены переменные окружения для подключения к БД и настройки токена. \
 
 2. Собираем, скачиваем контейнеры, перейдя в папку **avito-shop**
 ```bash

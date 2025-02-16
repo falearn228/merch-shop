@@ -3,10 +3,10 @@ A store created for the purchase of merch by users and the ability to transfer c
 
 ## Основные моменты
 
-Используемые технологии -> Docker, Docker-compose, Grafana, PostgreSQL, Golang (SQLC, gomock, testify, Gin, Viper) \
+Используемые технологии -> Docker, Docker-compose, Grafana, PostgreSQL, Golang (SQLC, gomock, testify, Gin, Viper) 
 
 `migrations` - файл с миграциями для БД \
-`internal` - внутренний код проекта \
+`internal` - внутренний код проекта 
 * `internal/tests` - E2E тесты для покупки мерча и передачи монет сотрудникам. 
 
 `cmd/server` - основной файл сервиса 

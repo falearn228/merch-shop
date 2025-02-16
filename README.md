@@ -100,5 +100,20 @@ make test
 
 9. Линтер для Go (Скорее всего потребуется **sudo** для установки)
 ```bash
-sudo make lint
+sudo make lint-prepare
+
+# Обычная проверка
+make lint
+
+# Проверка с исправлением
+make lint-fix
+
+# Быстрая проверка
+make lint-fast
+
+# Подробная проверка
+make lint-verbose
+
+# Создание JSON отчета
+make lint-json
 ```

@@ -60,7 +60,7 @@ curl http://localhost:8080/api/buy/t-shirt \
   -H "Authorization: Bearer $TOKEN"
 
 # Отправка монет другому пользователю
-curl -X POST http://localhost:8080/api/send \
+curl -X POST http://localhost:8080/api/sendCoin \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"toUser":"другой_пользователь","amount":100}'

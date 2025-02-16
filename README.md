@@ -7,10 +7,11 @@ A store created for the purchase of merch by users and the ability to transfer c
 
 `migrations` - файл с миграциями для БД \
 `internal` - внутренний код проекта \
-* `internal/tests` - E2E тесты для покупки мерча и передачи монет сотрудникам. \
-`cmd/server` - основной файл сервиса \
+* `internal/tests` - E2E тесты для покупки мерча и передачи монет сотрудникам. 
 
-Реализованы юнит-тесты для SQLC кода, API бизнес логики. \
+`cmd/server` - основной файл сервиса 
+
+Реализованы юнит-тесты для SQLC кода, API бизнес логики. 
 
 ## Требования
 - Docker

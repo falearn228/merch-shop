@@ -13,7 +13,7 @@ A store created for the purchase of merch by users and the ability to transfer c
 
 Реализованы юнит-тесты для SQLC кода, API бизнес логики. 
 
-Почему был выбран SQLC ? /
+Почему был выбран SQLC ? 
 
 * Типобезопасность на этапе компиляции
 * Автоматическая генерация кода

@@ -1,0 +1,93 @@
+# Опции запуска
+run:
+  # Таймаут для всего процесса линтинга
+  timeout: 5m
+  # Разрешить параллельное выполнение
+  concurrency: 4
+  # Путь к файлу с выводом
+
+# Линтеры
+linters:
+  disable-all: true
+  enable:
+    - errcheck     # Проверяет обработку ошибок
+    - gosimple     # Упрощает код
+    - govet        # Проверяет корректность кода
+    - ineffassign  # Находит неиспользуемые присваивания
+    - staticcheck  # Выполняет статический анализ
+    - typecheck    # Проверяет типы
+    - unused       # Находит неиспользуемый код
+    - gosec        # Проверяет безопасность
+    - gofmt        # Проверяет форматирование
+    - goimports    # Проверяет импорты
+    - misspell     # Проверяет орфографию
+    - gocyclo      # Проверяет цикломатическую сложность
+    - dupl         # Ищет дублирующийся код
+    - goconst      # Находит потенциальные константы
+    - gocritic     # Находит ошибки в коде
+    - revive       # Проверяет стиль кода
+
+# Настройки линтеров
+linters-settings:
+  gosec:
+    # Включаем все проверки безопасности
+    severity: "low"
+    confidence: "low"
+    excludes:
+      - G104  # Проверка ошибок в defer
+      - G114  # Использование net/http вместо net/http/httputil
+      - G204  # Бинарное выполнение команд
+
+  gocyclo:
+    # Максимальная сложность функции
+    min-complexity: 15
+
+  dupl:
+    # Порог для определения дублирования
+    threshold: 100
+
+  goconst:
+    min-len: 3           # Минимальная длина строки
+    min-occurrences: 3   # Минимальное количество повторений
+
+  gocritic:
+    enabled-tags:
+      - diagnostic       # Диагностические проверки
+      - style           # Стилистические проверки
+      - performance     # Проверки производительности
+
+  revive:
+    rules:
+      - name: exported            # Проверка экспортируемых сущностей
+      - name: package-comments    # Проверка комментариев пакетов
+      - name: error-naming        # Проверка именования ошибок
+      - name: error-strings       # Проверка строк ошибок
+      - name: error-return        # Проверка возврата ошибок
+      - name: increment-decrement # Проверка инкремента/декремента
+      - name: var-naming         # Проверка именования переменных
+      - name: var-declaration    # Проверка объявления переменных
+      - name: receiver-naming    # Проверка именования receiver'ов
+
+# Настройки проблем
+issues:
+  # Максимальное количество проблем
+  max-issues-per-linter: 0
+  max-same-issues: 0
+
+  # Исключения для тестов
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - dupl
+        - gosec
+        - goconst
+
+  # Не показывать ошибки в обработчиках ошибок
+  exclude:
+    - Error return value of .((os\.)?std(out|err)\..*|.*Close|.*Flush|os\.Remove(All)?|.*print(f|ln)?|os\.(Un)?Setenv). is not checked
+
+  # Показывать все проблемы
+  new: false
+
+  # Фиксировать проблемы, где возможно
+  fix: true
